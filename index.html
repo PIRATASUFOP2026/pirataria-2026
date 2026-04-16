@@ -433,7 +433,38 @@
   <p class="footer-text">Piratas UFOP · Associação Atlética Acadêmica de Educação Física</p>
   <p class="footer-text" style="margin-top: 8px; color: #2a2a2a;">Pirataria 2026 · Todos os direitos reservados</p>
 </div>
+<script>
+(function() {
 
+  // ============================================================
+  // VISIBILIDADE DOS CARDS DE INGRESSO
+  // Para esconder um lote: mude "true" para "false"
+  // Para mostrar de volta: mude "false" para "true"
+  // ============================================================
+  const VISIBILIDADE = {
+    lote1: true,   // 1º Lote — R$ 30 — Marujo Corajoso
+    lote2: false,   // 2º Lote — R$ 40 — Capitão da Festa
+    lote3: false,   // 3º Lote — R$ 50 — Corsário VIP
+  };
+
+  // Aplica visibilidade dos cards
+  (function aplicarVisibilidade() {
+    const cards = document.querySelectorAll('.ticket-card');
+    cards.forEach(card => {
+      const lote = parseInt(card.dataset.lote);
+      const chave = 'lote' + lote;
+      if (VISIBILIDADE[chave] === false) {
+        card.style.display = 'none';
+      } else {
+        card.style.display = '';
+      }
+    });
+
+    // Se todos os lotes estiverem ocultos, esconde a seção inteira
+    const todosOcultos = Object.values(VISIBILIDADE).every(v => v === false);
+    const secao = document.querySelector('.tickets-section');
+    if (secao) secao.style.display = todosOcultos ? 'none' : '';
+  })();
 <div class="toast" id="toast"></div>
 
 <script>
