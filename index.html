@@ -314,7 +314,7 @@
   </div>
 
   <div class="admin-lote">
-    <div class="admin-lote-name">3º Lote — R$ 45</div>
+    <div class="admin-lote-name">3º Lote — R$ 60 </div>
     <div class="toggle-wrap">
       <span class="toggle-label" id="label-3">Disponível</span>
       <div class="toggle active" id="toggle-3" onclick="toggleLote(3)"></div>
@@ -402,7 +402,7 @@
       <div class="ticket-desc">Capitão da Festa</div>
     </div>
     <div class="ticket-card reveal reveal-delay-3"
-         data-lote="3" data-nome="3º Lote" data-price="50"
+         data-lote="3" data-nome="3º Lote" data-price="60"
          data-url="https://loja.infinitepay.io/adriano-chaves-893/nmp4569-pirada-bem-vindos-marujos---terceiro-lote">
       <span class="ticket-icon">💀</span>
       <div class="lote-badge">3º Lote</div>
@@ -448,7 +448,7 @@
   const VISIBILIDADE = {
     lote1: true,   // 1º Lote — R$ 30 — Marujo Corajoso
     lote2: true,   // 2º Lote — R$ 40 — Capitão da Festa
-    lote3: false,   // 3º Lote — R$ 50 — Corsário VIP
+    lote3: true,   // 3º Lote — R$ 50 — Corsário VIP
   };
 
   // Aplica visibilidade dos cards
@@ -476,8 +476,8 @@
   // ============================================================
   const LOTES = {
     1: { ativo: false },
-    2: { ativo: true },
-    3: { ativo: false },
+    2: { ativo: false },
+    3: { ativo: true },
   };
 
   // ============================================================
